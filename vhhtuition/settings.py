@@ -212,3 +212,14 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
     DEFAULT_CONTACT_NUMBER = '07729237478'
+    
+  # ssl settings
+
+MIDDLEWARE = [
+    # SecurityMiddleware must be listed before other middleware
+    'django.middleware.security.SecurityMiddleware',
+    # ...
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = T
